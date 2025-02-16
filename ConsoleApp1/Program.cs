@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-string mensagemDeBoaVidas = "Boas vindas, Hello, World";
+string mensagemDeBoaVidas = "Boas vindas ao Screen Sound";
 
 void ExibirMensagemDeBoasVindas()
 {
