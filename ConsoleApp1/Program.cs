@@ -1,9 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 string mensagemDeBoaVidas = "Boas vindas ao Screen Sound";
+List<string> listaDasBandas = new List<string>();
 
-void ExibirMensagemDeBoasVindas()
+void ExibirLogo ()
 {
-    
     Console.WriteLine(@"
 
 ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗  ░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
@@ -19,6 +19,7 @@ void ExibirMensagemDeBoasVindas()
 
 void ExibirMenuOpções ()
 {
+    ExibirLogo();
     Console.WriteLine("\nDigite 1 para registrar uma bandas");
     Console.WriteLine("Digite 2 para mostrar todas as bandas");
     Console.WriteLine("Digite 3 para avaliar as bandas");
@@ -31,7 +32,7 @@ void ExibirMenuOpções ()
     
     switch(opcaoEscolhidaInt)
     {
-        case 1: Console.WriteLine("Você escolheu a opção: " + opcaoEscolhidaInt);
+        case 1: RegistrarBanda();
             break; case 2: Console.WriteLine("Você escolheu a opção: " + opcaoEscolhidaInt);
             break; case 3: Console.WriteLine("Você escolheu a opção: " + opcaoEscolhidaInt);
             break; case 4: Console.WriteLine("Você escolheu a opção: " + opcaoEscolhidaInt);
@@ -40,6 +41,18 @@ void ExibirMenuOpções ()
             default: Console.WriteLine("Opção inválida"); break;
     }
 }
-ExibirMensagemDeBoasVindas();
+    void RegistrarBanda()
+{
+    Console.Clear();
+    Console.WriteLine("Registro de bandas");
+    Console.Write("Digite o nome da banda que deseja registrar: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    listaDasBandas.Add(nomeDaBanda);
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso");
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibirMenuOpções();
+}
+
 ExibirMenuOpções();
 
